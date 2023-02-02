@@ -1,0 +1,56 @@
+using System;
+
+//Write Vehicle class here
+public class Vehicle{
+    public string _type;
+    public int _numTires;
+    public string Type{
+        
+        get {
+            return _type;
+        }
+        
+        set{
+            if(value == String.Empty){
+                
+                Console.WriteLine("The vehicle type cannot be empty");
+                
+            } else {
+                
+            	_type = value;
+            }
+        }
+        
+    }
+    public int NumTires{
+        
+        get {
+            return _numTires;
+        }
+        
+        set{
+            if(value >= 1){
+                _numTires = value;
+            } else {
+                Console.WriteLine("The vehicle must have at least one tire");
+            }
+        }
+        
+    }
+        
+}
+
+public class MainClass{
+    public static void Main(){
+        // Test code
+        Vehicle myRide = new Vehicle();
+        myRide.Type = "Motorcycle";
+        myRide.NumTires = 2;
+        Console.WriteLine(myRide.Type);
+        Console.WriteLine(myRide.NumTires);
+        myRide.Type = String.Empty;
+        Console.WriteLine(myRide.Type);
+        myRide.NumTires = 0;
+        Console.WriteLine(myRide.NumTires);
+  }
+}
